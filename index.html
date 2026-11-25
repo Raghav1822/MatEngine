@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2d">
+  <meta name="description" content="Turn engineering questions into MATLAB-ready analysis, clear plots, and explainable results.">
+  <title>MatEngine — Think it through.</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="MatEngine home"><span class="brand-mark">M<span>+</span></span><span>mat<span class="brand-light">engine</span></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" type="button"><span class="nav-icon">◈</span> Solver studio</button>
+      <button class="nav-item" type="button" id="examplesNav"><span class="nav-icon">▤</span> Example library</button>
+      <div class="side-label category-label">EXPLORE BY FIELD</div>
+      <button class="field-link selected" data-solver="vibration" type="button"><span class="field-dot cyan"></span> Vibrations</button>
+      <button class="field-link" data-solver="beam" type="button"><span class="field-dot blue"></span> Structures</button>
+      <button class="field-link" data-solver="heat" type="button"><span class="field-dot orange"></span> Heat transfer</button>
+      <button class="field-link" data-solver="calculus" type="button"><span class="field-dot violet"></span> Mathematics</button>
+      <button class="field-link" data-solver="linear" type="button"><span class="field-dot green"></span> Linear algebra</button>
+      <button class="field-link" data-solver="optimize" type="button"><span class="field-dot yellow"></span> Optimization</button>
+      <div class="sidebar-bottom">
+        <div class="runtime-card"><span class="runtime-pulse"></span><div><strong>Runtime status</strong><small id="runtimeStatus">Preview mode</small></div><span class="runtime-arrow">↗</span></div>
+        <div class="profile"><div class="avatar">ME</div><div><strong>MatEngine</strong><small>Engineering workspace</small></div><span class="profile-dots">···</span></div>
+      </div>
+    </aside>
+
+    <main id="top" class="main-area">
+      <header class="topbar">
+        <div class="breadcrumbs"><span>Workspace</span><span class="crumb-sep">/</span><strong>Solver studio</strong></div>
+        <div class="top-actions"><span class="secure-label"><span class="secure-icon">⌑</span> Computation stays yours</span><a class="github-link" href="https://github.com/Raghav1822/MatEngine" target="_blank" rel="noreferrer" aria-label="Open MatEngine on GitHub">↗</a></div>
+      </header>
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> THE ENGINEERING THINKING SPACE <span class="eyebrow-line"></span></div>
+        <h1>Think it through.<br><span>See it come to life.</span></h1>
+        <p>Describe the problem. Explore a validated model. Leave with MATLAB-ready code and a result you can understand.</p>
+        <div class="intro-meta"><span><i class="meta-icon">✳</i> Math, science &amp; engineering</span><span class="meta-divider"></span><span><i class="meta-icon">⌁</i> Explainable by design</span></div>
+      </section>
+
+      <section class="workspace-grid" aria-label="Problem solving workspace">
+        <div class="left-column">
+          <article class="card prompt-card">
+            <div class="card-heading"><div><span class="step-label">01 <span>·</span> DEFINE</span><h2>What are you working on?</h2></div><span class="card-glyph">✳</span></div>
+            <label class="sr-only" for="problemInput">Describe your engineering or math problem</label>
+            <textarea id="problemInput" rows="3" maxlength="600" placeholder="Try: Plot the free vibration response of a damped mass-spring system…">Plot the free vibration response of a damped mass-spring system.</textarea>
+            <div class="prompt-footer"><span class="input-hint"><span class="sparkle">✦</span> Pick a starting point</span><span id="charCount">67 / 600</span></div>
+            <div class="example-chips" aria-label="Example problems">
+              <button type="button" data-solver="vibration">Damped vibration</button><button type="button" data-solver="beam">Cantilever beam</button><button type="button" data-solver="heat">Cooling curve</button><button type="button" data-solver="calculus">Integrate sin(x)</button>
+            </div>
+            <div class="prompt-actions"><span class="safe-note"><span>◆</span> Runs only validated model templates</span><button id="runButton" class="run-button" type="button"><span>Run analysis</span><span class="run-arrow">→</span></button></div>
+          </article>
+
+          <article class="card result-card">
+            <div class="card-heading result-heading"><div><span class="step-label">02 <span>·</span> EXPLORE</span><h2 id="resultTitle">Free vibration response</h2></div><span class="result-badge"><span class="badge-dot"></span><span id="resultMode">ILLUSTRATIVE PREVIEW</span></span></div>
+            <div class="result-summary" id="resultSummary">A damped oscillator returns toward equilibrium over time.</div>
+            <div class="chart-wrap"><div class="chart-y-label" id="yLabel">Displacement (m)</div><div class="chart-area"><div class="chart-legend"><span class="legend-dot"></span><span id="chartLegend">Displacement</span></div><svg id="plot" viewBox="0 0 640 250" role="img" aria-label="Illustrative vibration response chart"></svg><div class="chart-x-label" id="xLabel">Time (s)</div></div></div>
+            <div id="metrics" class="metrics-row"></div>
+            <div class="chart-foot"><span><i class="foot-check">✓</i> Model assumptions shown in generated code</span><button id="downloadCsv" class="text-action" type="button">Download data <span>↓</span></button></div>
+          </article>
+        </div>
+
+        <div class="right-column">
+          <article class="card code-card">
+            <div class="code-top"><div><span class="step-label">03 <span>·</span> TAKE IT FURTHER</span><h2>MATLAB, ready to go.</h2></div><span class="matlab-mark">M</span></div>
+            <p class="code-description">A clear, editable script built from the model above. Make it yours in MATLAB.</p>
+            <div class="code-window"><div class="code-window-bar"><span class="window-dots"><i></i><i></i><i></i></span><span>matengine_analysis.m</span><button id="copyCode" type="button" aria-label="Copy MATLAB code">Copy</button></div><pre><code id="matlabCode"></code></pre></div>
+            <div class="code-note"><span>✦</span><p><strong>Transparent, not a black box.</strong><br>Review every assumption and parameter before using the script.</p></div>
+            <button id="downloadCode" class="download-button" type="button"><span>↓</span> Download .m file</button>
+          </article>
+
+          <article class="card insight-card"><div class="insight-icon">✧</div><div><span class="step-label">A NOTE ON RESULTS</span><h3>Good engineering starts with good assumptions.</h3><p id="assumptions">This preview uses a linear, underdamped single-degree-of-freedom model. Confirm the parameters and model fit your real system.</p></div></article>
+          <div class="disclaimer"><span>ⓘ</span><p>Preview calculations run in your browser and are for exploration. Connect a licensed MATLAB Production Server to execute analyses in MATLAB. Validate results before engineering use.</p></div>
+        </div>
+      </section>
+      <footer class="page-footer"><span>MATENGINE <span class="footer-dot">·</span> A workspace for better questions</span><span>Built for curiosity, grounded in computation.</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
