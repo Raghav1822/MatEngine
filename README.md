@@ -20,14 +20,14 @@ The proxy uses only Node.js built-ins (Node 18+). Deploy `matlab/matengineSolve.
 
 ```sh
 MPS_FUNCTION_URL=https://your-mps-host:9910/matengine/matengineSolve \\
-MPS_AUTH_TOKEN=your-server-side-token \\
-ALLOWED_ORIGIN=https://your-site.example \\
-node server/server.js
+  MPS_AUTH_TOKEN=your-server-side-token \\
+  ALLOWED_ORIGIN=https://your-site.example \\
+  NODE_ENV=production node server/server.js
 ```
 
-`MPS_AUTH_TOKEN` is optional if your server uses another trusted authentication mechanism. Never commit credentials or expose them in `config.js`. The browser only connects to the proxy. The proxy validates the operation, limits request size and execution time, and validates returned numeric data.
+`MPS_AUTH_TOKEN` is optional if your server uses another trusted authentication mechanism. Never commit credentials or expose them in `config.js`. The browser only connects to the proxy. The proxy validates the operation, limits request size, concurrency, and per-IP rate, and validates returned numeric data. For a public service, also configure TLS, authentication, rate limiting, firewall rules, and CORS at your hosting layer.
 
-Set `window.MATENGINE_API_BASE` in `config.js` to the proxy's HTTPS base URL (for example `https://api.example.com`). For local development, set it to `http://localhost:3000`. Deploy the proxy in a network environment that can reach the MPS endpoint and configure its firewall, TLS, authentication, rate limiting, and CORS policy for your deployment.
+Set `window.MATENGINE_API_BASE` in `config.js` to the proxy's HTTPS base URL (for example `https://api.example.com`). For local development, set it to `http://localhost:3000`. Deploy the proxy in a network environment that can reach the MPS endpoint.
 
 ## GitHub Pages
 
