@@ -19,10 +19,7 @@ Open `index.html` in a browser, or serve this directory with any static web serv
 The proxy uses only Node.js built-ins (Node 18+). Deploy `matlab/matengineSolve.m` to MATLAB Production Server first, then start the proxy with its function endpoint:
 
 ```sh
-MPS_FUNCTION_URL=https://your-mps-host:9910/matengine/matengineSolve \\
-  MPS_AUTH_TOKEN=your-server-side-token \\
-  ALLOWED_ORIGIN=https://your-site.example \\
-  NODE_ENV=production node server/server.js
+MPS_FUNCTION_URL=https://your-mps-host:9910/matengine/matengineSolve MPS_AUTH_TOKEN=your-server-side-token ALLOWED_ORIGIN=https://your-site.example NODE_ENV=production node server/server.js
 ```
 
 `MPS_AUTH_TOKEN` is optional if your server uses another trusted authentication mechanism. Never commit credentials or expose them in `config.js`. The browser only connects to the proxy. The proxy validates the operation, limits request size, concurrency, and per-IP rate, and validates returned numeric data. For a public service, also configure TLS, authentication, rate limiting, firewall rules, and CORS at your hosting layer.
