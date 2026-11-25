@@ -1,44 +1,100 @@
 :root {
-  --text: #f3f6fb;
-  --muted: #c1ccda;
-  --cyan: #8ce7dc;
-  --blue: #a9c8ff;
-  --orange: #ffc09a;
-  --violet: #d0baff;
-  --green: #91e6b9;
-  --yellow: #f1dc91;
+  color-scheme: light;
+  --bg: #f2f5f2;
+  --panel: #ffffff;
+  --panel2: #f7faf8;
+  --line: #d7e1dc;
+  --text: #192b3a;
+  --muted: #526778;
+  --cyan: #087f78;
+  --blue: #356ab1;
+  --orange: #b65b2b;
+  --violet: #7350ad;
+  --green: #237b53;
+  --yellow: #8a6812;
 }
 
-body { color: var(--text); }
-.side-label, .step-label { color: #b4c2d2; }
-.nav-item, .field-link { color: #c3cedc; }
-.nav-item.active, .field-link.selected { color: #edfff9; }
-.nav-item:hover, .field-link:hover { color: #f5fbff; }
-.brand-light { color: #c0ccda; }
-.breadcrumbs { color: #b4c2d2; }
-.breadcrumbs strong { color: #edf3fa; }
-.crumb-sep, .secure-label { color: #afbdcd; }
-.intro > p, .intro-meta { color: #c0ccda; }
-.prompt-footer, .safe-note, .result-summary, .chart-foot,
-.code-description, .code-note p, .insight-card p, .disclaimer,
-.page-footer { color: #b7c4d3; }
-.prompt-card textarea { color: #f1f5fa; }
-.prompt-card textarea::placeholder { color: #a9b8ca; }
-.example-chips button { color: #d0dae6; }
-.chart-y-label, .chart-x-label, .axis-label { color: #a9b8ca; }
-.axis-label { fill: #a9b8ca; }
-.metric small { color: #b3c1d1; }
-.metric strong { color: #f0f5fb; }
+body { background: var(--bg); color: var(--text); }
+.sidebar { background: #e8efeb; border-color: #d5e0da; }
+.brand { color: #173546; }
+.brand-light { color: #526b79; }
+.brand-mark { background: linear-gradient(145deg, #d9efeb, #edf5f2); border-color: #a9cbc4; color: #146c67; }
+.side-label, .step-label { color: #536a78; }
+.nav-item, .field-link { color: #405767; }
+.nav-item.active { background: #d8e9e4; color: #154f4d; box-shadow: inset 2px 0 #16877e; }
+.nav-item:hover, .field-link:hover { background: #dfeae5; color: #173e50; }
+.field-link.selected { color: #173e50; background: #dce9e4; }
+.nav-icon { color: #197e76; }
+.runtime-card { background: #f5faf7; border-color: #d2e0d9; }
+.runtime-card strong, .profile strong { color: #294354; }
+.runtime-card small, .profile small { color: #5b7180; }
+.runtime-arrow, .profile-dots { color: #526b79; }
+.avatar { background: #dbe8e4; color: #294e5a; }
+.main-area { color: var(--text); }
+.topbar { border-color: #d9e2dd; }
+.breadcrumbs { color: #526778; }
+.breadcrumbs strong { color: #233d4d; }
+.crumb-sep { color: #7b8d98; }
+.secure-label { color: #526778; }
+.secure-icon { color: #147c73; }
+.github-link { color: #294354; border-color: #cbd8d2; }
+.github-link:hover { border-color: #288d83; color: #126d66; }
+.eyebrow { color: #176f69; }
+.eyebrow-line { background: #9dc8bf; }
+h1 { color: #1d3040; }
+h1 span { color: #147b72; }
+.intro > p, .intro-meta { color: #526778; }
+.meta-icon { color: #25887c; }
+.meta-divider { background: #cbd7d1; }
+.card { background: #fff; border-color: #d7e1dc; box-shadow: 0 10px 28px #193c3210; }
+.card h2 { color: #1d3343; }
+.card-glyph { color: #188276; }
+.step-label { color: #16776e; }
+.step-label > span { color: #7a8c96; }
+.prompt-card textarea { background: #f7faf8; border-color: #cbd9d2; color: #203849; }
+.prompt-card textarea::placeholder { color: #71838c; }
+.prompt-card textarea:focus { border-color: #3a9a8d; box-shadow: 0 0 0 3px #3a9a8d20; }
+.prompt-footer, .safe-note { color: #5c7180; }
+.sparkle { color: #7654ad; }
+.example-chips button { background: #f1f6f3; border-color: #d0ddd6; color: #405968; }
+.example-chips button:hover { background: #e6f3ef; border-color: #63a99f; color: #145d58; }
+.prompt-actions { border-color: #dce5e0; }
+.safe-note span { color: #168276; }
+.run-button { background: #187f76; color: #fff; box-shadow: 0 5px 16px #187f7620; }
+.run-button:hover { background: #106c65; }
+.result-badge { background: #fbf5df; border-color: #e4d59c; color: #765a11; }
+.result-summary, .chart-foot { color: #526778; }
+.chart-wrap { border-color: #dce5e0; }
+.chart-y-label, .chart-x-label { color: #526778; }
+.axis-label { fill: #637985; }
+.grid-line { stroke: #dbe4df; }
+.metric { background: #f7faf8; border-color: #dce5e0; }
+.metric small { color: #5c7180; }
+.metric strong { color: #203849; }
+.foot-check { color: #218255; }
+.text-action { color: #126e65; }
+.text-action:hover { color: #084d48; }
+.code-card .step-label { color: #16776e; }
+.code-description { color: #526778; }
+.code-window { background: #111b29; border-color: #27394c; }
+.code-window-bar { background: #192638; color: #bdcbd8; }
+.code-window-bar button { color: #d3dee7; }
 .code-window code { color: #e0e8f1; }
-.code-window code .comment { color: #9fb3c8; }
+.code-window code .comment { color: #a8bbce; }
 .code-window code .keyword { color: #d7baff; }
 .code-window code .number { color: #ffd09e; }
 .code-window code .string { color: #a8e8bc; }
-.code-window-bar { color: #b5c3d2; }
-.code-window-bar button { color: #cad5e1; }
-.code-note strong { color: #e6edf5; }
-.insight-card h3 { color: #edf3f9; }
-.github-link { color: #e0e9f2; }
-.text-action { color: #b9f1e7; }
-.disclaimer > span { color: #f1d98c; }
-.page-footer { color: #aebccd; }
+.code-note { border-color: #dce5e0; }
+.code-note p, .insight-card p { color: #526778; }
+.code-note strong { color: #233d4d; }
+.download-button { background: #e9f4f0; border-color: #a9d0c6; color: #145e57; }
+.download-button:hover { background: #dcefe9; border-color: #73b5a8; }
+.insight-card { background: linear-gradient(130deg, #edf7f3, #f3f5fb); border-color: #d7e4dd; }
+.insight-card .step-label { color: #765a11; }
+.insight-card h3 { color: #263d4c; }
+.insight-icon { color: #8a6812; }
+.disclaimer { color: #526778; }
+.disclaimer > span { color: #8a6812; }
+.page-footer { color: #5c7180; border-color: #d9e2dd; }
+.footer-dot { color: #147b72; }
+.toast { background: #e5f4ee; border-color: #9bc7b8; color: #1c493d; }
