@@ -1,0 +1,44 @@
+:root {
+  --text: #f3f6fb;
+  --muted: #c1ccda;
+  --cyan: #8ce7dc;
+  --blue: #a9c8ff;
+  --orange: #ffc09a;
+  --violet: #d0baff;
+  --green: #91e6b9;
+  --yellow: #f1dc91;
+}
+
+body { color: var(--text); }
+.side-label, .step-label { color: #b4c2d2; }
+.nav-item, .field-link { color: #c3cedc; }
+.nav-item.active, .field-link.selected { color: #edfff9; }
+.nav-item:hover, .field-link:hover { color: #f5fbff; }
+.brand-light { color: #c0ccda; }
+.breadcrumbs { color: #b4c2d2; }
+.breadcrumbs strong { color: #edf3fa; }
+.crumb-sep, .secure-label { color: #afbdcd; }
+.intro > p, .intro-meta { color: #c0ccda; }
+.prompt-footer, .safe-note, .result-summary, .chart-foot,
+.code-description, .code-note p, .insight-card p, .disclaimer,
+.page-footer { color: #b7c4d3; }
+.prompt-card textarea { color: #f1f5fa; }
+.prompt-card textarea::placeholder { color: #a9b8ca; }
+.example-chips button { color: #d0dae6; }
+.chart-y-label, .chart-x-label, .axis-label { color: #a9b8ca; }
+.axis-label { fill: #a9b8ca; }
+.metric small { color: #b3c1d1; }
+.metric strong { color: #f0f5fb; }
+.code-window code { color: #e0e8f1; }
+.code-window code .comment { color: #9fb3c8; }
+.code-window code .keyword { color: #d7baff; }
+.code-window code .number { color: #ffd09e; }
+.code-window code .string { color: #a8e8bc; }
+.code-window-bar { color: #b5c3d2; }
+.code-window-bar button { color: #cad5e1; }
+.code-note strong { color: #e6edf5; }
+.insight-card h3 { color: #edf3f9; }
+.github-link { color: #e0e9f2; }
+.text-action { color: #b9f1e7; }
+.disclaimer > span { color: #f1d98c; }
+.page-footer { color: #aebccd; }
